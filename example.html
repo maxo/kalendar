@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Kalendar example</title>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="kalendar.js"></script>
+    <style>
+    .colorBlue {
+      color: blue;
+    }
+    body {
+      background-color: #e1e1e1;
+    }
+    </style>
+  </head>
+  <body>
+  
+  <h1>Plain Kalendar</h1>
+  <div id="plain"></div>
+  
+  <br />
+  <h1>Custom days Kalendar</h1>
+  <div id="days"></div>
+  
+  <br />
+  <h1>Custom month Kalendar: 2015-01</h1>
+  <div id="month" style="width: 60%;"></div>
+  
+  <script>
+    var events = [
+		   {
+		    "title": "Meeting with Jane Do", // Mandatory
+		    "day":7, // Mandatory: day of the month (1-31)
+		    "classes":"colorBlue", // optional: css classes for the event
+		    },
+		    {
+		    "title": "Dentist appointment. Ouch!",
+		    "day":15,
+		    },
+		    {
+		    "title": "Meet in-laws!",
+		    "day":17,
+		    },
+		    {
+		    "title": "Get groceries..",
+		    "day":17,
+		    },
+		    {
+		    "title": "Cook dinner",
+		    "day":17,
+		    },
+		    {
+		    "title": "bleh",
+		    "day":17,
+		    }
+		];
+    
+    $('#plain').kalendar({events: events});
+    
+    $('#days').kalendar({events: events, labels: ["dies Solis", "dies Lunae", "dies Martis", "dies Mercurii", "dies Jovis", "dies Veneris", "dies Saturni"]});
+    
+    $('#month').kalendar({date:'2015-01', events: events});
+  </script>
+  </body>
+</html>
